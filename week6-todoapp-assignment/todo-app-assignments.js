@@ -34,6 +34,9 @@ function aggiungiTodoAllaLista(todoObj){
 function refreshTodolistElements() {
   todoListElem.innerText = ''; // svuoto il contenuto della lista <UL>
   todoList.forEach(aggiungiTodoAllaLista); // uno alla volta aggiungo i TODO
+  // for (let i = 0; i < todoList.length; i++) {
+  //   aggiungiTodoAllaLista(todoList[i]);
+  // }
 }
 
 // l'event handler del click sul pulsante "Add todo"
@@ -92,10 +95,11 @@ todoInputElem.focus();
 function onDeleteLastAddedItem() {
   console.log("delete last added item");
   // write your code here below...
-  // 1. remove the last item in the todoList array using the array function pop()
+  // 1. remove the last item from the todoList array using the pop() method
   // 2. print the list of the items to the console using a "for" loop
-  //
-
+  
+  todoList.pop();
+  refreshTodolistElements();
 }
 
 function onReverseBtnClick() {
